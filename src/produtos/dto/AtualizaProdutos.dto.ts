@@ -7,7 +7,7 @@ import { Type } from "class-transformer";
 import { IdValidado } from "src/usuarios/validador/idUsuario.validador";
 
 
-export class produtoCriado{
+export class AtualizaProduto{
 
   @IsNotEmpty()
   @IsOptional()

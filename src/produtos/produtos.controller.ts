@@ -2,7 +2,7 @@
 import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 import { repositoryProdutos } from './produtos.repository';
 import { produtoCriado } from './dto/criaProdutos.dto';
-import { AtualizaUsuarioTdo } from 'src/usuarios/dto/AtualizaUsuario.dto';
+import { AtualizaProduto } from './dto/AtualizaProdutos.dto';
 
 
 @Controller('/produtos')
@@ -22,7 +22,7 @@ export class produtosController {
   }
 
   @Put('/:id')
-  async atualizaProduto(@Param('id') id: string, @Body() dadosProdutos: AtualizaUsuarioTdo){
+  async atualizaProduto(@Param('id') id: string, @Body() dadosProdutos: AtualizaProduto){
     const possivelProduto = await this.repository.produtoAtualizado(id, dadosProdutos)
 
     return possivelProduto
